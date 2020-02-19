@@ -17,7 +17,12 @@ function App() {
     async function loadData() {
       try {
         const response = await fetch(
-          'https://mantras-counter-node.herokuapp.com/api/v1/mantras'
+          'https://mantras-counter-node.herokuapp.com/api/v1/mantras',
+          {
+            headers: {
+              'x-api-key': process.env.REACT_APP_API_KEY
+            }
+          }
         )
         const resJson = await response.json()
         const mantrasAmount = resJson.reduce((a, b) => ({
@@ -73,7 +78,10 @@ function App() {
     fetch('https://mantras-counter-node.herokuapp.com/api/v1/mantras', {
       method: 'POST',
       body: JSON.stringify(inputData),
-      headers: { 'Content-Type': 'application/json' }
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': process.env.REACT_APP_API_KEY
+      }
     }).catch(err => console.log('Error:', err))
 
     setinputData({ name: '', mantras_count: '' })

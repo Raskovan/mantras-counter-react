@@ -16,6 +16,7 @@ textarea {
   font-size: 150%;
   background: none;
   border-width: 0 0 1px;
+  -webkit-border-radius: 0;
   border-color: var(--main-color-off-white);
   padding: 10px 10px 5px 0;
   color: var(--main-color-red);
