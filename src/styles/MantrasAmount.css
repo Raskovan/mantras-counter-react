@@ -1,0 +1,23 @@
+.mantras_count_container {
+  margin-bottom: 36px;
+}
+
+.mantras_count {
+  text-align: center;
+  color: var(--main-color-red);
+  font-size: 64px;
+  font-weight: 200;
+}
+
+.mantras_count_text {
+  text-align: center;
+  color: var(--main-color-off-white);
+  font-size: 24px;
+  font-weight: 200;
+}
+
+@media only screen and (max-width: 414px) {
+  .mantras_count {
+    font-size: 20vw;
+  }
+}

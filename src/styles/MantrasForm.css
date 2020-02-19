@@ -1,0 +1,65 @@
+.mantras-form-container {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.mantras-form {
+  width: 40vw;
+  display: inline-block;
+}
+
+input,
+select,
+textarea {
+  outline: 0;
+  font-family: inherit;
+  font-size: 150%;
+  background: none;
+  border-width: 0 0 1px;
+  border-color: var(--main-color-off-white);
+  padding: 10px 10px 5px 0;
+  color: var(--main-color-red);
+  margin-right: 15px;
+}
+
+input:focus,
+textarea:focus {
+  border-width: 0 0 3px;
+}
+
+button {
+  padding: 10px 15px;
+  font: bold 150% sans-serif;
+  border: none;
+  background: none;
+  color: var(--main-color-red);
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  outline: none;
+  background: rgb(118, 118, 118);
+  color: #fff;
+}
+
+.mantras-form-input {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 414px) {
+  .mantras-form-input {
+    padding: 0 25px;
+    flex-direction: column;
+  }
+  input {
+    margin: 0 0 25px 0;
+  }
+  button {
+    background: rgb(118, 118, 118);
+    color: #fff;
+  }
+}

@@ -1,0 +1,153 @@
+:root {
+  --main-font-size: 1.6vmax;
+  --main-line-height: 2.6vmax;
+  --main-text-color: #393939;
+  --main-font-weight: 300;
+  --main-color-red: #d22238;
+  --main-color-off-white: rgb(205, 205, 205);
+}
+
+p {
+  white-space: pre-line;
+  margin: 0;
+}
+
+a {
+  color: var(--main-color-red);
+  margin: 0 0 15px 0;
+  transition: 0.3s;
+  border-bottom: 1px solid;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-text-color);
+}
+
+.container {
+  max-width: 100%;
+  margin: 25px 0 0;
+  padding: 0 0 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 57%;
+}
+
+.container_img {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.body_text {
+  font-size: var(--main-font-size);
+  line-height: var(--main-line-height);
+  color: var(--main-text-color);
+  font-weight: var(--main-font-weight);
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.secondary_text {
+  font-size: 1.35vmax;
+  margin: 25px 0 0;
+  line-height: 2vmax;
+  letter-spacing: 0.1px;
+  color: var(--main-text-color);
+}
+
+.no_margin {
+  margin: 0 !important;
+}
+
+.caption_text {
+  font-size: 1.2vmax;
+  border-bottom: none;
+  color: var(--main-text-color);
+}
+
+.caption_text:hover {
+  color: var(--main-color-red);
+}
+
+.caption_text:before {
+  content: '› ';
+  font-weight: 700;
+  color: var(--main-color-red);
+}
+
+.section_img {
+  margin: 0px -10vmin 45px;
+  overflow: hidden;
+  position: relative;
+}
+
+.window_pad {
+  padding: 0 10vmin;
+}
+
+.sub_sub_title {
+  font-size: 1.5vmax;
+  margin: 0 0 5px 0;
+  color: var(--main-color-red);
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 414px) {
+  :root {
+    --main-font-size: 2vmax;
+    --main-line-height: 3.1vmax;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .container_text {
+    width: auto;
+    margin-bottom: 15px;
+  }
+  .container_img {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .section_img {
+    height: 70vw;
+    width: 100vw;
+    overflow: hidden;
+    margin: 0px -7vmin 45px;
+  }
+  .sub_sub_title {
+    font-size: 2vmax;
+    margin: 0 0 15px 0;
+  }
+  .secondary_text {
+    line-height: 2.4vmax;
+    font-size: 1.6vmax;
+  }
+  .caption_text {
+    font-size: 1.4vmax;
+    line-height: 1.8vmax;
+  }
+  .window_pad {
+    padding: 0 7vmin;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text-color: #d4d4d4;
+  }
+
+  body {
+    background: #272727;
+  }
+}
+@media (prefers-color-scheme: light) {
+}

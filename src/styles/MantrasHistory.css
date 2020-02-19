@@ -1,0 +1,19 @@
+#table {
+  display: table;
+  margin: 0 auto;
+  color: grey;
+}
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+}
+
+span:nth-child(even) {
+  padding: 0 25px;
+}
+
+.cell-spacer {
+  margin-bottom: 5px;
+}

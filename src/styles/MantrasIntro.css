@@ -1,0 +1,46 @@
+.intro-container {
+  margin: 14px 0 36px;
+  text-align: center;
+  color: var(--main-text-color);
+  padding: 0 85px;
+}
+
+.intro_text {
+  font-size: 130%;
+  font-weight: 200;
+  line-height: 2.3rem;
+}
+
+.intro_title {
+  font-size: 200%;
+  font-weight: 300;
+  line-height: 3rem;
+}
+
+.intro_image {
+  float: left;
+  margin: 10px;
+  width: 15%;
+}
+
+@media only screen and (max-width: 414px) {
+  .intro_text {
+    font-size: 110%;
+    font-weight: 200;
+    line-height: 1.7rem;
+  }
+  .intro_title {
+    font-size: 200%;
+    line-height: 2.5rem;
+    margin-bottom: 25px;
+  }
+  .intro_image {
+    float: right;
+    width: 35%;
+  }
+  .intro-container {
+    margin: 14px 0 36px;
+    text-align: left;
+    padding: 0 25px;
+  }
+}
