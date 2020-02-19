@@ -6,6 +6,7 @@ import MantrasHistory from './Components/MantrasHistory.jsx'
 import './styles/App.css'
 import MantrasIntro from './Components/MantrasIntro.jsx'
 import Footer from './Components/Footer.jsx'
+import Loader from './Components/Loader.jsx'
 
 function App() {
   const [data, setData] = useState([])
@@ -87,19 +88,25 @@ function App() {
     setinputData({ name: '', mantras_count: '' })
   }
 
-  if (!data || !allMantras.mantras_count) return <div>Loading...</div>
+  // if (!data || !allMantras.mantras_count) return <div>Loading...</div>
 
   return (
     <div className="App">
       <Header />
       <MantrasIntro />
-      <MantrasAmount allMantras={allMantras} />
-      <MantrasForm
-        inputData={inputData}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
-      <MantrasHistory data={data} />
+      {data && allMantras.mantras_count ? (
+        <>
+          <MantrasAmount allMantras={allMantras} />
+          <MantrasForm
+            inputData={inputData}
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+          />
+          <MantrasHistory data={data} />
+        </>
+      ) : (
+        <Loader />
+      )}
       <Footer />
     </div>
   )

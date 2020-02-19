@@ -1,0 +1,27 @@
+img {
+  width: 15%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mala_image {
+    animation: App-logo-spin infinite 20s linear;
+  }
+
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  img {
+    width: 35%;
+  }
+}
