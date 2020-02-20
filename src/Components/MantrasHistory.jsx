@@ -12,17 +12,30 @@ export default function MantrasHistory(props) {
     return `${month}.${day}.${year}`
   }
 
+  const chunkedData = data.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index / 10)
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = []
+    }
+    resultArray[chunkIndex].push(item)
+    return resultArray
+  }, [])
+  console.log(chunkedData)
   return (
-    <div id="table">
-      {data.map((item, index) => (
-        <>
-          <div key={index} className="row">
-            <span className="cell">{item.mantras_count}</span>
-            <span className="cell">{item.name}</span>
-            <span className="cell">{formatDate(item.date_created)}</span>
-          </div>
-          <div className="cell-spacer"></div>
-        </>
+    <div className="mantras_table">
+      {chunkedData.map((data, i) => (
+        <div className="table" key={i}>
+          {data.map((item, index) => (
+            <div key={index} className="row">
+              <span className="cell">
+                <b>{item.mantras_count}</b>
+              </span>
+              <span className="cell">{item.name}</span>
+              <span className="cell">{formatDate(item.date_created)}</span>
+            </div>
+            // <div className="cell-spacer"></div>
+          ))}
+        </div>
       ))}
     </div>
   )
