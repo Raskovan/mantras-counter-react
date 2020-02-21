@@ -1,8 +1,7 @@
-name: CI
+name: Build and Publish Front End Framework Website
 
 on: [push]
 
-name: Build and Publish Front End Framework Website
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
