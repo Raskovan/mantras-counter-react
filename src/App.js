@@ -88,8 +88,6 @@ function App() {
     setinputData({ name: '', mantras_count: '' })
   }
 
-  // if (!data || !allMantras.mantras_count) return <div>Loading...</div>
-
   return (
     <div className="App">
       <Header />

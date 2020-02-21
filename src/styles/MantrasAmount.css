@@ -5,7 +5,7 @@
 .mantras_count {
   text-align: center;
   color: var(--main-color-red);
-  font-size: 64px;
+  font-size: 6em;
   font-weight: 200;
 }
 
