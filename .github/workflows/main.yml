@@ -31,3 +31,4 @@ jobs:
         ftp-username: alexk
         ftp-password: 2JpdKyq2fKpPjf
         git-ftp-args: --insecure
+        local-dir: build/
