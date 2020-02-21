@@ -30,4 +30,5 @@ jobs:
         ftp-server: sftp://diamondway.org/var/www/vhosts/diamondway.org/httpdocs/manhattan-project/mantras
         ftp-username: alexk
         ftp-password: 2JpdKyq2fKpPjf
+        git-ftp-args: --insecure
         local-dir: build # This folder is NOT going to upload by default unless you add it to .git-ftp-include
