@@ -8,13 +8,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - name: Checkout
+      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+      with:
+        persist-credentials: false
+    - name: Install and Build
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+        npm install
+        npm run-script build
     - name: ssh deploy
       uses: easingthemes/ssh-deploy@v2.0.8
       with:
