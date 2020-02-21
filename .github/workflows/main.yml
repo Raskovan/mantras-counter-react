@@ -2,28 +2,33 @@ name: CI
 
 on: [push]
 
+name: Build and Publish Front End Framework Website
 jobs:
-  build:
-
+  FTP-Deploy-Action:
+    name: FTP-Deploy-Action
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+    - uses: actions/checkout@master
       with:
-        persist-credentials: false
-    - name: Install and Build
+        fetch-depth: 2
+
+    - name: Use Node.js 12.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        
+    - name: Build Project
       run: |
         npm install
-        npm run-script build
-    - name: ssh deploy
-      uses: easingthemes/ssh-deploy@v2.0.8
+        npm run build --if-present
+        
+    - name: List output files
+      run: ls
+      
+    - name: FTP-Deploy-Action
+      uses: SamKirkland/FTP-Deploy-Action@3.0.0
       with:
-        # Private Key
-        SSH_PRIVATE_KEY: 2JpdKyq2fKpPjf
-        # Remote host
-        REMOTE_HOST: diamondway.org
-        # Remote user
-        REMOTE_USER: alexk
-        # Target directory
-        TARGET: /var/www/vhosts/diamondway.org/httpdocs/manhattan-project/matras
+        ftp-server: sftp://diamondway.org/var/www/vhosts/diamondway.org/httpdocs/manhattan-project/mantras
+        ftp-username: alexk
+        ftp-password: 2JpdKyq2fKpPjf
+        local-dir: build # This folder is NOT going to upload by default unless you add it to .git-ftp-include
