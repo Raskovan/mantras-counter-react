@@ -13,6 +13,7 @@ select,
 textarea {
   outline: 0;
   font-family: inherit;
+  font-weight: 300;
   font-size: 150%;
   background: none;
   border-width: 0 0 1px;

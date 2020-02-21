@@ -20,7 +20,7 @@ export default function MantrasHistory(props) {
     resultArray[chunkIndex].push(item)
     return resultArray
   }, [])
-  console.log(chunkedData)
+
   return (
     <div className="mantras_table">
       {chunkedData.map((data, i) => (
