@@ -16,7 +16,7 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
     - name: ssh deploy
-    - uses: easingthemes/ssh-deploy@v2.0.8
+      uses: easingthemes/ssh-deploy@v2.0.8
       with:
         # Private Key
         SSH_PRIVATE_KEY: 2JpdKyq2fKpPjf
