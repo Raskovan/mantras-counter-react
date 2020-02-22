@@ -18,6 +18,7 @@ export default function MantrasForm(props) {
             type="text"
             name="name"
             placeholder="Name"
+            maxLength="16"
             value={inputData.name}
             onChange={handleChange}
           />
