@@ -98,11 +98,11 @@ function App() {
             handleSubmit={handleSubmit}
           />
           <MantrasHistory data={data} />
+          <Footer />
         </>
       ) : (
         <Loader />
       )}
-      <Footer />
     </div>
   )
 }
