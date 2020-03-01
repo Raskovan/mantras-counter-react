@@ -17,9 +17,7 @@ function App() {
   useEffect(() => {
     async function loadData() {
       try {
-        const response = await fetch(
-          'https://578hkotcwh.execute-api.us-east-1.amazonaws.com/production/mantras'
-        )
+        const response = await fetch(process.env.REACT_APP_AWS_DYNAMODB_URI)
         const resJson = await response.json()
         const mantrasAmount = resJson.reduce((a, b) => ({
           mantras_count: a.mantras_count + b.mantras_count
@@ -71,16 +69,13 @@ function App() {
       mantras_count:
         allMantras.mantras_count + parseInt(inputData.mantras_count)
     })
-    fetch(
-      'https://578hkotcwh.execute-api.us-east-1.amazonaws.com/production/mantras',
-      {
-        method: 'POST',
-        body: JSON.stringify(inputData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    fetch(process.env.REACT_APP_AWS_DYNAMODB_URI, {
+      method: 'POST',
+      body: JSON.stringify(inputData),
+      headers: {
+        'Content-Type': 'application/json'
       }
-    ).catch(err => console.log('Error:', err))
+    }).catch(err => console.log('Error:', err))
 
     setinputData({ name: '', mantras_count: '' })
   }

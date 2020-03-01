@@ -19,6 +19,7 @@ jobs:
       - name: Build Project
         run: |
           npm install
+          export REACT_APP_AWS_DYNAMODB_URI=${{ secrets.AWS_DYNAMODB_URI }} &&
           npm run build --if-present
 
       - name: List output files
