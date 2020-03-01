@@ -6,9 +6,9 @@ export default function MantrasHistory(props) {
 
   const formatDate = date => {
     const dateObj = new Date(date)
-    const month = dateObj.getUTCMonth() + 1 //months from 1-12
-    const day = dateObj.getUTCDate()
-    const year = dateObj.getUTCFullYear()
+    const month = dateObj.getMonth() + 1 //months from 1-12
+    const day = dateObj.getDate()
+    const year = dateObj.getFullYear()
     return `${month}.${day}.${year}`
   }
 
