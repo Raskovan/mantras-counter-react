@@ -25,8 +25,8 @@ const MantrasIntro = () => {
         do a formal sitting session in order to count your Karmapa Chenno
         mantras. Formal sessions on the 16th Karmapa in your local center are
         recommended as well. We wish to keep this project ongoing throughout
-        2020 and see how soon we can accomplish 4 million Karmapa Chennos.
-        Primarily we wish to build up Karmapa's power-field and establish the
+        2020 and see how soon we can accomplish <b>4 million Karmapa Chennos</b>
+        . Primarily we wish to build up Karmapa's power-field and establish the
         finest inner conditions for this project's success. We hope you will
         join us!
       </p>
