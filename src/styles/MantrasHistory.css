@@ -13,7 +13,9 @@
   color: grey;
   width: 30%;
   margin-bottom: 15px;
-  flex-basis: 265px;
+  flex-basis: 130px;
+  border-right: 1px solid;
+  padding-right: 10px;
 }
 .row {
   display: flex;
@@ -30,12 +32,14 @@
 
 @media only screen and (max-width: 414px) {
   .mantras_table {
-    flex-direction: column;
+    /* flex-direction: column; */
     padding: 0 25px;
     align-items: center;
   }
   .table {
-    width: 100%;
+    width: 40%;
     flex-basis: auto;
+    border-right: none;
+    padding-right: 0;
   }
 }

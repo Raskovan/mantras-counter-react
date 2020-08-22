@@ -28,12 +28,11 @@ export default function MantrasHistory(props) {
           {data.map((item, index) => (
             <div key={index} className="row">
               <span className="cell">
-                <b>{item.mantras_count}</b>
+                <strong>{item.mantras_count}</strong>
               </span>
-              <span className="cell">{item.name}</span>
+              {/* <span className="cell">{item.name}</span> */}
               <span className="cell">{formatDate(item.date_created)}</span>
             </div>
-            // <div className="cell-spacer"></div>
           ))}
         </div>
       ))}
