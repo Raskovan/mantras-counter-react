@@ -3,8 +3,8 @@ name: Build and Publish Front End Framework Website
 on: [push]
 
 jobs:
-  FTP-Deploy-Action:
-    name: FTP-Deploy-Action
+  Build-and-Deploy:
+    name: Build-and-Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
@@ -29,7 +29,7 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
-          ARGS: '-rltgoDzvOc --delete'
+          ARGS: '-rltgoDzvviOc --delete'
           SOURCE: 'build/'
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
