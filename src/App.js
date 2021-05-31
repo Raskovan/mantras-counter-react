@@ -22,7 +22,7 @@ function App() {
         const mantrasAmount = resJson.reduce((a, b) => ({
           mantras_count: a.mantras_count + b.mantras_count
         }))
-        const sortedData = resJson.sort(function(a, b) {
+        const sortedData = resJson.sort(function (a, b) {
           return new Date(b.date_created) - new Date(a.date_created)
         })
         setData(sortedData)
@@ -92,7 +92,7 @@ function App() {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
-          <MantrasHistory data={data} />
+          {/* <MantrasHistory data={data} /> */}
           <Footer />
         </>
       ) : (
