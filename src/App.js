@@ -17,7 +17,9 @@ function App() {
   useEffect(() => {
     async function loadData() {
       try {
-        const response = await fetch(process.env.REACT_APP_AWS_DYNAMODB_URI + "&mantra_id=manhattan-project&singleEntry=true");
+        const response = await fetch(
+          process.env.REACT_APP_AWS_DYNAMODB_URI + "?table_name=dwbc_mantras&mantra_id=manhattan-project&singleEntry=true"
+        );
         const resJson = await response.json();
         setAllMantras(resJson);
       } catch (err) {
