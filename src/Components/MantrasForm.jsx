@@ -1,19 +1,13 @@
-import React from 'react'
-import '../styles/MantrasForm.css'
+import React from "react";
+import "../styles/MantrasForm.css";
 
 export default function MantrasForm(props) {
-  const { inputData, handleSubmit, handleChange } = props
+  const { inputData, handleSubmit, handleChange } = props;
   return (
     <div className="mantras-form-container">
       <form autoComplete="off" onSubmit={handleSubmit} className="mantras_form">
         <div className="mantras-form-input">
-          <input
-            type="number"
-            name="mantras_count"
-            placeholder="Number"
-            value={inputData.mantras_count}
-            onChange={handleChange}
-          />
+          <input disabled type="number" name="mantras_count" placeholder="Number" value={inputData.mantras_count} onChange={handleChange} />
           {/* <input
             type="text"
             name="name"
@@ -22,9 +16,11 @@ export default function MantrasForm(props) {
             value={inputData.name}
             onChange={handleChange}
           /> */}
-          <button type="submit">+</button>
+          <button type="submit" disabled>
+            +
+          </button>
         </div>
       </form>
     </div>
-  )
+  );
 }
